@@ -1,0 +1,21 @@
+﻿<Window x:Class="wordle.DetailedSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wordle"
+        mc:Ignorable="d"
+        Title="DetailedSearch" Height="450" Width="800" Closed="Window_Closed">
+    <Grid>
+        <ListBox HorizontalAlignment="Left" Height="147" VerticalAlignment="Top" Width="772" Margin="10,262,0,0"/>
+        <Label Content="The list of words that meet the requirements above:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,231,0,0" Width="392"/>
+        <Label Content="Write the letters here, which you know is in the word at that exact place. (Use spaces for unknown letters): " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="569"/>
+        <TextBox x:Name="LettersInPlace" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Margin="584,13,0,0" TextChanged="LettersInPlace_TextChanged"/>
+        <Label Content="Write letters here which are in the word, but in a wrong location (Write in the place where it wasn't, use spaces like above):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0" Width="606" FontSize="11"/>
+        <TextBox x:Name="LettersNotInPlace" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Margin="621,39,0,0" TextChanged="LettersNotInPlace_TextChanged"/>
+        <Label Content="Write letters here which are not in the word:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0" Width="229" FontSize="11"/>
+        <TextBox x:Name="LettersNotInIt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="543" Margin="239,66,0,0" TextChanged="LettersNotInIt_TextChanged"/>
+        <Button x:Name="SearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="772" Margin="10,206,0,0" Click="SearchBtn_Click"/>
+
+    </Grid>
+</Window>

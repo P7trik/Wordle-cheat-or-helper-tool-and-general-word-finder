@@ -1,0 +1,17 @@
+D:\progArchive\wordle\wordle\bin\Debug\wordle.exe.config
+D:\progArchive\wordle\wordle\bin\Debug\wordle.exe
+D:\progArchive\wordle\wordle\bin\Debug\wordle.pdb
+D:\progArchive\wordle\wordle\obj\Debug\wordle.csproj.AssemblyReference.cache
+D:\progArchive\wordle\wordle\obj\Debug\MainWindow.g.cs
+D:\progArchive\wordle\wordle\obj\Debug\App.g.cs
+D:\progArchive\wordle\wordle\obj\Debug\wordle_MarkupCompile.cache
+D:\progArchive\wordle\wordle\obj\Debug\wordle_MarkupCompile.lref
+D:\progArchive\wordle\wordle\obj\Debug\MainWindow.baml
+D:\progArchive\wordle\wordle\obj\Debug\wordle.g.resources
+D:\progArchive\wordle\wordle\obj\Debug\wordle.Properties.Resources.resources
+D:\progArchive\wordle\wordle\obj\Debug\wordle.csproj.GenerateResource.cache
+D:\progArchive\wordle\wordle\obj\Debug\wordle.csproj.CoreCompileInputs.cache
+D:\progArchive\wordle\wordle\obj\Debug\wordle.exe
+D:\progArchive\wordle\wordle\obj\Debug\wordle.pdb
+D:\progArchive\wordle\wordle\obj\Debug\DetailedSearch.g.cs
+D:\progArchive\wordle\wordle\obj\Debug\DetailedSearch.baml
