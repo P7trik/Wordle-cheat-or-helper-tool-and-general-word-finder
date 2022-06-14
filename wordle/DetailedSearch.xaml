@@ -5,17 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wordle"
         mc:Ignorable="d"
-        Title="DetailedSearch" Height="450" Width="800" Closed="Window_Closed">
-    <Grid>
-        <ListBox HorizontalAlignment="Left" Height="147" VerticalAlignment="Top" Width="772" Margin="10,262,0,0"/>
-        <Label Content="The list of words that meet the requirements above:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,231,0,0" Width="392"/>
-        <Label Content="Write the letters here, which you know is in the word at that exact place. (Use spaces for unknown letters): " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="569"/>
-        <TextBox x:Name="LettersInPlace" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Margin="584,13,0,0" TextChanged="LettersInPlace_TextChanged"/>
-        <Label Content="Write letters here which are in the word, but in a wrong location (Write in the place where it wasn't, use spaces like above):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0" Width="606" FontSize="11"/>
-        <TextBox x:Name="LettersNotInPlace" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Margin="621,39,0,0" TextChanged="LettersNotInPlace_TextChanged"/>
-        <Label Content="Write letters here which are not in the word:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0" Width="229" FontSize="11"/>
-        <TextBox x:Name="LettersNotInIt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="543" Margin="239,66,0,0" TextChanged="LettersNotInIt_TextChanged"/>
-        <Button x:Name="SearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="772" Margin="10,206,0,0" Click="SearchBtn_Click"/>
+        Title="DetailedSearch" Height="500" Width="800" Closed="Window_Closed">
+    <Grid x:Name="FirstPlaceDelete">
+        <ListBox x:Name="SearchResults" HorizontalAlignment="Left" Height="147" VerticalAlignment="Top" Width="772" Margin="10,312,0,0"/>
+        <Label Content="The list of words that meet the requirements above:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,281,0,0" Width="392"/>
+        <Label Content="Select the letters which you know are in the right position (leave it as is if you don't know):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="496"/>
+        <Label Content="Select the letter and it's place which are in the word, but not in the correct position (select which position they are not in):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,80,0,0" Width="606" FontSize="11"/>
+        <Label Content="Write letters here which are not in the word:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,212,0,0" Width="229" FontSize="11"/>
+        <TextBox x:Name="LettersNotInIt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="543" Margin="239,212,0,0" TextChanged="LettersNotInIt_TextChanged"/>
+        <Button x:Name="SearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="772" Margin="10,256,0,0" Click="SearchBtn_Click"/>
+        <ComboBox x:Name="FirstLetter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="506,14,0,0" RenderTransformOrigin="0.567,1.455" SelectedIndex="0"/>
+        <ComboBox x:Name="SecondLetter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="561,14,0,0" RenderTransformOrigin="0.567,1.455" SelectedIndex="0"/>
+        <ComboBox x:Name="ThirdLetter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="616,14,0,0" RenderTransformOrigin="0.567,1.455" SelectedIndex="0"/>
+        <ComboBox x:Name="FourthLetter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="671,14,0,0" RenderTransformOrigin="0.567,1.455" SelectedIndex="0"/>
+        <ComboBox x:Name="FithLetter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="726,14,0,0" RenderTransformOrigin="0.567,1.455" SelectedIndex="0"/>
+        <ListBox x:Name="FirstPlace" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="50" Margin="10,110,0,0"/>
+        <ListBox x:Name="SecondPlace" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="50" Margin="110,110,0,0"/>
+        <ListBox x:Name="ThirdPlace" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="50" Margin="210,110,0,0"/>
+        <ListBox x:Name="FourthPlace" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="50" Margin="310,110,0,0"/>
+        <ListBox x:Name="FithPlace" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="50" Margin="410,110,0,0"/>
+        <ComboBox x:Name="WhatLetter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="616,83,0,0" RenderTransformOrigin="0.567,1.455"/>
+        <ComboBox x:Name="WhereIsItNot" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="671,83,0,0" RenderTransformOrigin="0.567,1.455"/>
+        <Button x:Name="AddItInTheList" Content="Add it" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Margin="726,83,0,0" Height="22" Click="AddItInTheList_Click"/>
+        <Button x:Name="DeleteFirstSelected" Content="Delete&#xD;&#xA;selected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="10,150,0,0" Height="40" Click="DeleteFirstSelected_Click"/>
+        <Button x:Name="DeleteSecondSelected" Content="Delete&#xA;selected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="110,150,0,0" Height="40" Click="DeleteSecondSelected_Click"/>
+        <Button x:Name="DeleteThirdSelected" Content="Delete&#xA;selected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="210,150,0,0" Height="40" Click="DeleteThirdSelected_Click"/>
+        <Button x:Name="DeleteFourthSelected" Content="Delete&#xA;selected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="310,150,0,0" Height="40" Click="DeleteFourthSelected_Click"/>
+        <Button x:Name="DeleteFithSelected" Content="Delete&#xA;selected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="410,150,0,0" Height="40" Click="DeleteFithSelected_Click"/>
 
     </Grid>
 </Window>

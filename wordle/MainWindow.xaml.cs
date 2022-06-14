@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace wordle
         public MainWindow()
         {
             InitializeComponent();
+
+            if (!File.Exists(@"..\..\5LetterWordsOnly.txt"))
+            {
+                DictionaryCheck.CreateCopyOf5LetterWords();
+            }
         }
 
         private void _5letterwordgen_Click(object sender, RoutedEventArgs e)
@@ -30,24 +36,11 @@ namespace wordle
             try
             {
                 DictionaryCheck.CreateCopyOf5LetterWords();
-                MessageBox.Show("The dictionary's optimization for wordle is complete.\n You will find the original and the optimised in the program's folder.", "Success", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show("The dictionary's optimization for wordle is complete.\nYou will find the original and the optimised in the program's folder.", "Success", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
             }
             catch (Exception Error)
             {
-                MessageBox.Show($"Something failed during the optimization.\n Error message: {Error.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-            }
-        }
-
-        private void Del5letterWordDict_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                DictionaryCheck.DeleteCopyOf5LetterWords();
-                MessageBox.Show("The optimized dictionary was deleted.", "Success", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-            }
-            catch (Exception Error)
-            {
-                MessageBox.Show($"Something failed during the deletion of the file.\n Try Deleting the file from the program's directory.\n Error message: {Error.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                MessageBox.Show($"Something failed during the optimization.\nError message: {Error.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
             }
         }
 
